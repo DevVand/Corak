@@ -1,1 +1,4 @@
 # Corak
+
+imports:
+-pygame
