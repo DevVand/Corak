@@ -515,7 +515,7 @@ def play_Area(InOut):
 
             intro = 0
             corak.Do = [0, 0, "Z"]
-        fade_count -= 1
+        fade_count -= 5
         if fade_count <= 0: intro = -1
         fader.image.set_alpha(fade_count)
     if out >= 0:
@@ -629,15 +629,11 @@ def play_Area(InOut):
     'draw'
     screen.image.blit(background.image, background.rect)
     # tiles.draw(screen.image)
-
     screen.image.blit(corak.sprite.image, corak.sprite.rect)
     screen.image.blit(tiles_draw.image, tiles_draw.rect)
-
     # screen.image.blit(tiles_deco.image, tiles_deco.rect)
-
-    screen.image.blit(pointer.image, pointer.rect.center)
-
     tiles_breakable.draw(screen.image)
+    screen.image.blit(pointer.image, pointer.rect.center)
     if temp2:
         fader2.image.set_alpha(fade_count)
         counterlight.image.fill(BLACK)
