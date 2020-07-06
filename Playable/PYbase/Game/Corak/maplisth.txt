@@ -1,0 +1,16 @@
+LRcorridor ─
+UDcorridor │
+LDturn ┐
+LUturn ┘
+RDturn ┌
+RUturn └
+Lroom ←
+Rroom →
+Uroom ↑
+Droom ↓
+Blank vazio
+LUD3way ┤
+RUD3way ├
+LRU3way  ┴
+LRD3way ┬
+LRUDhall ┼
