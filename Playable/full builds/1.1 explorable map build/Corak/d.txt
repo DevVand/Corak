@@ -1,0 +1,12 @@
+case for room in full edge
+
+mouse light
+vignette
+
+LRUD to [1, 1] on dicio
+
+transparent set color
+
+map gen
+
+mouse movement light

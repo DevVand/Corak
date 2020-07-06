@@ -1,0 +1,16 @@
+LRcorridorX
+UDcorridorX
+LDturnX
+LUturnX
+RDturnX
+RUturnX
+LroomX
+RroomX
+UroomX
+DroomX
+BlankX
+LUD3wayX
+RUD3wayX
+LRU3wayX
+LRD3wayX
+LRUDhallX

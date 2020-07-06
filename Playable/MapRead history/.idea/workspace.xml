@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6fc189b-f571-489b-b512-c5012231afc8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/PYbase.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/dictionaries/S2Har.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/.idea/Game.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/Main_menu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/Main_menu0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/Music_E.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/Worldgen3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/a.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/b.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/dicio.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/mapcr.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/mapcr2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/maplisth.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/mapread4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu00.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu0000000.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu002.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu01.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu22.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu2222.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu222222222222222222.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu8.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu9999.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menu9999999999999999999999999.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Main_menulight.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Worldgen32.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Worldgen33.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Worldgen34.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Worldgen35.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/Worldgen3fnl.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/mapread.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Corak/tst/mapread401.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/BlankX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/DroomX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LDturnX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LRD3wayX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LRU3wayX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LRUDX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LRUDhallX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LRcorridorX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LUD3wayX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LUturnX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/LroomX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/RDturnX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/RUD3wayX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/RUturnX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/RroomX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/UDcorridorX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/UroomX.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/maplist.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/tokeeplist.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/tutorial/0.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/tutorial/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/tutorial/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/tutorial/3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Salas/tutorial/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sound/click.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sound/click2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sound/kpLoop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sound/mLoop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sound/pianoLoop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sound/select.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/Sprite-0001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/corak full.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/credits.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/light-Recovered-export.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/Intro/click.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/Intro/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/controls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/credits.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/back.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/large_scr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/medium_scr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/music0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/music1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/opt_icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/pointer1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/pointer2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/pointer3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/pointer4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/pointers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/small_scr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/vol0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/options/vol1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/pointer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/menu/start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/spotlight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/spotlight2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/spotlight22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/tilesets/breakable.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/tilesets/deco.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PYbase/Game/Sprites/tilesets/tileset.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1eI8LUP0YOCcCcEJZUOMzcGC8j7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.V1 mapread semi modular">
+    <configuration name="V1 mapread semi modular" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MapRead" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V1 mapread semi modular.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="V2 mapread totalmente modular" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MapRead" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V2 mapread totalmente modular.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="V3 mapread completo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MapRead" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/V3 mapread completo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.V1 mapread semi modular" />
+        <item itemvalue="Python.V3 mapread completo" />
+        <item itemvalue="Python.V2 mapread totalmente modular" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6fc189b-f571-489b-b512-c5012231afc8" name="Default Changelist" comment="" />
+      <created>1593997690690</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593997690690</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="862" height="233" key="GridCell.Tab.0.bottom" timestamp="1593997937886">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="862" height="233" key="GridCell.Tab.0.bottom/0.0.1920.1080/-900.-263.900.1440/1920.-189.768.1366@0.0.1920.1080" timestamp="1593997937886" />
+    <state width="862" height="233" key="GridCell.Tab.0.center" timestamp="1593997937886">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="862" height="233" key="GridCell.Tab.0.center/0.0.1920.1080/-900.-263.900.1440/1920.-189.768.1366@0.0.1920.1080" timestamp="1593997937886" />
+    <state width="862" height="233" key="GridCell.Tab.0.left" timestamp="1593997937886">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="862" height="233" key="GridCell.Tab.0.left/0.0.1920.1080/-900.-263.900.1440/1920.-189.768.1366@0.0.1920.1080" timestamp="1593997937886" />
+    <state width="862" height="233" key="GridCell.Tab.0.right" timestamp="1593997937886">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="862" height="233" key="GridCell.Tab.0.right/0.0.1920.1080/-900.-263.900.1440/1920.-189.768.1366@0.0.1920.1080" timestamp="1593997937886" />
+    <state x="761" y="186" key="SettingsEditor" timestamp="1593997713026">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="761" y="186" key="SettingsEditor/0.0.1920.1080/-900.-263.900.1440/1920.-189.768.1366@0.0.1920.1080" timestamp="1593997713026" />
+    <state x="844" y="163" width="784" height="807" key="dock-window-1" timestamp="1593997909314">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="844" y="163" width="784" height="807" key="dock-window-1/0.0.1920.1080/-900.-263.900.1440/1920.-189.768.1366@0.0.1920.1080" timestamp="1593997909314" />
+  </component>
+</project>

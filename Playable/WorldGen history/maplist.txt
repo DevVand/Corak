@@ -1,0 +1,16 @@
+LRcorridorX.txt
+UDcorridorX.txt
+LDturnX.txt
+LUturnX.txt
+RDturnX.txt
+RUturnX.txt
+LroomX.txt
+RroomX.txt
+UroomX.txt
+DroomX.txt
+BlankX.txt
+LUD3wayX.txt
+RUD3wayX.txt
+LRU3wayX.txt
+LRD3wayX.txt
+LRUDhallX.txt
