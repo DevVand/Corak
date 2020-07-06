@@ -11,7 +11,7 @@ ScreenXY = [ScreenX, ScreenY]
 middlex, middley, = ScreenX/2, ScreenY/2
 middle = [middlex, middley]
 
-upscale = 2
+upscale = 3
 
 FScreenX = ScreenX * upscale
 FScreenY = ScreenY * upscale

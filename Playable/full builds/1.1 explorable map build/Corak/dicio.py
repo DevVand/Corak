@@ -2,8 +2,8 @@ mode30 = False
 mode500 = True
 phisycs = False
 
-ScreenX = 1000
-ScreenY = 560
+ScreenX = 500
+ScreenY = 500
 ScreenXY = [ScreenX, ScreenY]
 
 middlex, middley, = ScreenX/2, ScreenY/2

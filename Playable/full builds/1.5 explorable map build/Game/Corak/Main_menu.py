@@ -382,7 +382,7 @@ screeneffects = pg.sprite.Group()
 screeneffects.add(fader)
 
 # effects
-pointerLight = Spriter("spotlight2.png", [1, 1], (0, 0))
+pointerLight = Spriter("spotlight4.png", [1, 1], (0, 0))
 playerLight = Spriter("spotlight2.png", [1, 1], (0, 0))
 pointer = Spriter("menu/pointer.png", [1, 4], (0, 0))
 tst2 = False
@@ -969,9 +969,10 @@ while Active:
             screen.image.fill(BLACK)
             screen.image.blit(background.image, background.rect)
             # tiles.draw(screen.image)
-            screen.image.blit(tiles_draw.image, tiles_draw.rect)
 
             screen.image.blit(corak.sprite.image, corak.sprite.rect)
+            screen.image.blit(tiles_draw.image, tiles_draw.rect)
+
             # screen.image.blit(tiles_deco.image, tiles_deco.rect)
 
             tiles_breakable.draw(screen.image)

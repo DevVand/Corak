@@ -219,7 +219,7 @@ while True:
     if temp < 50: temp += 1
     else: temp = 0
 
-    screen.fill(WHITE)
+    screen.fill(BLACK)
     tiles.draw(screen)
     tiles2.draw(screen)
     pygame.draw.rect(screen, RED, [mousex, mousey, temp, 10])
