@@ -2,7 +2,7 @@
 
 made by:  
   
-  LinearHaru (*Vand™*)  
+  **LinearHaru** (*Vand™*)  
 Email: S2Haru@outlook.com  
 Twitter: [@LinearHaru](https://twitter.com/LinearHaru)  
 [LinkTree](https://linktr.ee/linearharu)  
