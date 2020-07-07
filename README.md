@@ -1,6 +1,7 @@
 # Corak
 
-made by:
+made by:  
+  
   LinearHaru (*Vand™*)  
 Email: S2Haru@outlook.com  
 Twitter: [@LinearHaru](https://twitter.com/LinearHaru)  
