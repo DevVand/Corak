@@ -2,40 +2,56 @@ import pygame as pg
 from Game.Corak.dicio import *
 
 class sound_E():
-
     def __init__(s, type, vol):
-        s.type = type[0]
         type[1] = "../Sound/" + type[1] + ".wav"
 
         if type[0] == 0:
-            pg.mixer.Sound(type[1])
+            music_l.append(s)
+            s.m = pg.mixer.Sound(type[1])
+        elif type[0] == 1:
+            effect_l.append(s)
+            s.m = pg.mixer.Sound(type[1])
 
         s.vol = vol
-        s.main = 10
+        s.main = 7
+        s.vol_update()
 
     def set_vol(s, vol):
         s.vol = vol
         s.vol_update()
 
+    """returns"""
     def chg_vol(s, vol):
-        s.vol += vol
-        s.vol_update()
+        temp=s.vol+vol
+        if temp>1:
+            s.vol=1
+            return -1
+        elif temp<0:
+            s.vol=0
+            return -1
+        else:
+            s.vol = temp
+            s.vol_update()
+            return 0
 
     def vol_update(s):
-        s.set_volume((s.vol / 10) * s.main)
+        s.m.set_volume((s.vol / 10) * s.main)
 
+"""effects"""
+def chg_main_e(chg):
+    if -1 < effect_l[0].main+chg < 11:
+        for sound in effect_l:
+            sound.main+=chg
+            sound.vol_update()
 
-def chg_main_e(main):
-    main += main
-    for sound in sound_E:
-        if sound.type == 2: sound.vol_update(sound.vol)
+"""music"""
+def chg_main_m(chg):
+    if -1 < music_l[0].main+chg < 11:
+        for sound in music_l:
+            sound.main+=chg
+            sound.vol_update()
 
-def chg_main_m(main):
-    main += main
-    for sound in sound_E:
-        if sound.type <= 1: sound.vol_update(sound.vol)
-
-def chg_main(main):
+def chg_main_a(main):
     main += main
     for sound in sound_E: sound.vol_update(sound.vol)
 
@@ -52,6 +68,12 @@ mixerOn = [True, # 0 strt
           [False, True, 0],
           [False, False, False, False]
           ]
+
+global mixer
+mixer = []
+music_l=[]
+effect_l=[]
+
 pg.mixer.pre_init(44200, 16, 2)
 pg.mixer.init()
 
@@ -61,33 +83,12 @@ Mvol = 10
 Evol = 10
 
 #
+
 loop = sound_E([0, "kpLoop"], 0)
-trigger.append([True, False])
-
 Piano = sound_E([0, "pianoloop"], 0)
-trigger.append([False, False])
-
 mLoop = sound_E([0, "mLoop"], 0)
-trigger.append([False, False])
 
 #menu
-menuTrigger = []
-select = pg.mixer.Sound("../Sound/select.wav")
-select.set_volume(0.9)
-menuTrigger.append([False, False])
-
-clicks = pg.mixer.Sound("../Sound/click.wav")
-clicks.set_volume(0.8)
-menuTrigger.append([False, False])
-
-click2 = pg.mixer.Sound("../Sound/click2.wav")
-click2.set_volume(0.7)
-menuTrigger.append([False, False])
-
-pg.mixer.music.set_volume(0)
-
-Piano.play(-1)
-mLoop.play(-1)
-pg.mixer.music.play(-1)
-
-menuCount = 0
+select_e = sound_E([1, "select"], 0.9)
+click_e =sound_E([1, "click"], 0.8)
+click2_e = sound_E([1, "click2"], 0.7)

@@ -3,6 +3,8 @@ from Game.Corak.dicio import *
 from Game.Corak.Worldgen3 import hall
 from Game.Corak.mapcr import printmap
 from Game.Corak.mapread4 import mapread, generatenew
+from Game.Corak.Music_E import *
+
 
 class Corak(pg.sprite.Sprite):
     def __init__(S):
@@ -270,6 +272,13 @@ def intro_Area(InOut):
         global intro, out, looper, fade_count, mod, tempkeep
         tempkeep = ["intro", "out", "looper", "fade_count", "mod"]
         intro, out, looper, fade_count, mod = 0, -1, [0, False], 0, 0
+
+        """mixer"""
+        Piano.m.play(-1)
+        mLoop.m.play(-1)
+        loop.m.play(-1)
+        mixer.append([loop.chg_vol, 0.001])
+
     if intro == 0:
         # fadei in
         fade_count -= 2
@@ -296,6 +305,7 @@ def intro_Area(InOut):
                 out = -1
         fader.image.set_alpha(fade_count)
 
+
     #loop
     if looper[0] <= 50: looper[1] = True
     if looper[0] >= 230: looper[1] = False
@@ -308,8 +318,8 @@ def intro_Area(InOut):
         if click:
             intro = -1
             out += 2
-            trigger[1][0] = True
-            trigger[2][0] = True
+            mixer.append([Piano.chg_vol, 0.01])
+            mixer.append([mLoop.chg_vol, 0.002])
 
     'draw'
     screen.image.fill(BLACK)
@@ -374,10 +384,19 @@ def menu_Area(InOut):
         for btn in menu[i]:
             if btn.rect.collidepoint(pointer.rect.center):
                 btn.setFrame([0, 1])
-                if click:
-                    btn.setFrame([0, 2])
+
+                if click: btn.setFrame([0, 2])
+                if clickset:
+                    click_e.m.play()
+
                     if i == 0:
-                        if "start" in btn.type: out = 1
+                        if "start" in btn.type:
+                            out = 1
+
+                            mixer=[[loop.chg_vol, -0.02],
+                                  [Piano.chg_vol, 0.02],
+                                  [mLoop.chg_vol, 0.02]]
+
                         if "options" in btn.type: out = 2
                         if "credits" in btn.type: out = 3
                         if "exit" in btn.type: out = 10
@@ -391,12 +410,16 @@ def menu_Area(InOut):
                         elif "pointer3" in btn.type: pointer.setFrame([0, 2])
                         elif "pointer4" in btn.type: pointer.setFrame([0, 3])
                         elif "vol0" in btn.type:
+                            chg_main_e(-1)
                             btn.setFrame([0, 1])
                         elif "vol1" in btn.type:
+                            chg_main_e(1)
                             btn.setFrame([0, 1])
                         elif "music0" in btn.type:
+                            chg_main_m(-1)
                             btn.setFrame([0, 1])
                         elif "music1" in btn.type:
+                            chg_main_m(1)
                             btn.setFrame([0, 1])
             else:
                 btn.setFrame([0,0])
@@ -686,47 +709,6 @@ mixerOn = [True, # 0 strt
 pg.mixer.pre_init(44200, 16, 2)
 pg.mixer.init()
 
-vol = []
-trigger = []
-Mvol = 10
-Evol = 10
-
-#
-pg.mixer.music.load("../Sound/kpLoop.wav")
-trigger.append([True, False])
-vol.append(0.0)
-
-Piano = pg.mixer.Sound("../Sound/pianoLoop.wav")
-Piano.set_volume(0)
-vol.append(0.0)
-trigger.append([False, False])
-
-mLoop = pg.mixer.Sound("../Sound/mLoop.wav")
-mLoop.set_volume(0)
-vol.append(0.0)
-trigger.append([False, False])
-
-#menu
-menuTrigger = []
-select = pg.mixer.Sound("../Sound/select.wav")
-select.set_volume(0.9)
-menuTrigger.append([False, False])
-
-clicks = pg.mixer.Sound("../Sound/click.wav")
-clicks.set_volume(0.8)
-menuTrigger.append([False, False])
-
-click2 = pg.mixer.Sound("../Sound/click2.wav")
-click2.set_volume(0.7)
-menuTrigger.append([False, False])
-
-pg.mixer.music.set_volume(0)
-
-Piano.play(-1)
-mLoop.play(-1)
-pg.mixer.music.play(-1)
-
-menuCount = 0
 
 'sprite setting  \' '
 # menu intro
@@ -795,26 +777,14 @@ temp = False
 
 temp3 = False
 clickset = 0
+t=0
 
-#area
-menu_area = False
-mapgen_area = False
-play_area = False
-pause_area = False
-fullout = False
-
-intro_area = True
-# menu_area = True
-# mapgen_area = True
-# play_area = True
-# pause_area = True
 level = []
 alltiles = []
 
 Active = True
 area = intro_Area
 while Active:
-
     clickset = False
     keypress = False
     mx, my = pg.mouse.get_pos()
@@ -824,15 +794,16 @@ while Active:
     pointer.update((mx, my))
     clock.tick(FPS)
     pg.display.set_caption(str(round(clock.get_fps())))
+
+    """keys"""
     for event in pg.event.get():
         if event.type == pg.QUIT: Active = False
 
         if event.type == pg.MOUSEMOTION: pass
-        if event.type == pg.MOUSEBUTTONDOWN: click = True
+        if event.type == pg.MOUSEBUTTONDOWN: click,clickset = True, True
         if event.type == pg.MOUSEBUTTONUP:
             if event.button == 1:
                 click = False
-                clickset = True
 
         if event.type == pg.KEYDOWN:
             keypress = True
@@ -869,7 +840,14 @@ while Active:
                 else:
                     FPS = 60
 
+    """area"""
     InOut = area(InOut)
+
+    """mixer"""
+    for controller in mixer:
+        if controller[0](controller[1]) == -1:
+            mixer.remove(controller)
+            break
 
     tst = pg.transform.scale(screen.image, (FScreenX, FScreenY))
     toBlit.blit(tst, (0, 0))
@@ -907,359 +885,8 @@ while Active:
         del tempkeep
         print(globals())
 
-while Active:
-    ''
-    'reset'
-    clickset = False
-    keypress = False
-
-    mx, my = pg.mouse.get_pos()
-    mx /= upscale
-    my /= upscale
-    pointer.update((mx, my))
-    clock.tick(FPS)
-    pg.display.set_caption(str(round(clock.get_fps())))
-    for event in pg.event.get():
-        if event.type == pg.QUIT: Active = False
-
-        if event.type == pg.MOUSEMOTION: pass
-        if event.type == pg.MOUSEBUTTONDOWN: click = True
-        if event.type == pg.MOUSEBUTTONUP:
-            if event.button == 1:
-                click = False
-                clickset = True
-
-        if event.type == pg.KEYDOWN:
-            keypress = True
-            if play_area:
-                if event.key == (pg.K_w or pg.K_UP):
-                    corak.Do = [0, -1, "U"]
-                elif event.key == (pg.K_a or pg.K_LEFT):
-                    corak.Do = [-1, 0, "L"]
-                elif event.key == (pg.K_d or pg.K_RIGHT):
-                    corak.Do = [1, 0, "R"]
-                elif event.key == (pg.K_s or pg.K_DOWN):
-                    corak.Do = [0, 0, "X"]
-                elif event.key == (pg.K_z or pg.K_q):
-                    corak.Do = [-1, 0, "H"]
-                elif event.key == (pg.K_x or pg.K_e):
-                    corak.Do = [1, 0, "H"]
-
-            if event.key == pg.K_ESCAPE:
-                pause_area = True
-                tempscreen.image.blit(screen.image, (0, 0))
-
-            if event.key == pg.K_SPACE:
-                corak.focus = True
-                corak.cantGo = ["x"]
-
-            if event.key == pg.K_EQUALS:
-                for a in sala: print(a)
-                temp2 = True if not temp2 else False
-
-                print(corak.at, map_at, level[map_at[1]][map_at[0]])
-
-            if event.key == (pg.K_BACKSPACE):
-                if FPS < 70:
-                    FPS = 1000
-                else:
-                    FPS = 60
-
-    if mixerOn[0]:
-        if mixerOn[1]:
-            # kp
-              # strt
-            if trigger[0][0]:
-                if vol[0] <= 0.7:
-                    vol[0] += 0.002
-                    pg.mixer.music.set_volume((vol[0]/10) * Mvol)
-                else: trigger[0][0] = False
-              # end
-            if trigger[0][1]:
-                if vol[0] > 0.0:
-                    vol[0] -= 0.005
-                    pg.mixer.music.set_volume((vol[0]/10) * Mvol)
-                if vol[0] <= 0.01:
-                    trigger[0][1] = False
-            # piano
-              # strt
-            if trigger[1][0]:
-                if vol[1] <= 0.9:
-                    vol[1] += 0.01
-                    Piano.set_volume((vol[1]/10) * Mvol)
-                else: trigger[1][0] = False
-              # end
-            if trigger[1][1]:
-                if vol[1] > 0.0:
-                    vol[1] -= 0.005
-                    Piano.set_volume((vol[1]/10) * Mvol)
-                if vol[1] <= 0.01: trigger[1][1] = False
-            #
-              # strt
-            if trigger[2][0]:
-                if vol[2] <= 0.8:
-                    vol[2] += 0.001
-                    mLoop.set_volume((vol[2]/10) * Mvol)
-                else: trigger[2][0] = False
-              # end
-            if trigger[2][1]:
-                if vol[2] > 0.0:
-                    vol[2] -= 0.005
-                    mLoop.set_volume((vol[2]/10) * Mvol)
-                if vol[2] <= 0.01: trigger[2][1] = False
-        if mixerOn[2]:
-            # select
-            if menuTrigger[0][1]:
-                select.stop()
-                select.play(0)
-                menuTrigger[0][1] = False
-            # click
-            if menuTrigger[1][1]:
-                clicks.stop()
-                clicks.play(0)
-                menuTrigger[1][1] = False
-            # click set
-            if menuTrigger[2][1]:
-                click2.stop()
-                click2.play(0)
-                menuTrigger[2][1] = False
-        if mixerOn[3]:
-            trigger[0][1] = True
-            trigger[1][1] = True
-            trigger[2][1] = True
-            mixerOn[3] = False
-        if mixerOn[4][0]:
-            if not trigger[0][1] and not trigger[1][1] and not trigger[2][1]:
-
-                Piano.stop()
-                mLoop.stop()
-                pg.mixer.music.stop()
-
-                pg.mixer.quit()
-                pg.mixer.pre_init(22100, 16, 2)
-                pg.mixer.init()
-
-                pg.mixer.music.load("../Sound/kpLoop.wav")
-
-                pg.mixer.music.set_volume(0)
-                Piano.set_volume(0)
-                mLoop.set_volume(0)
-
-                Piano.play(-1)
-                mLoop.play(-1)
-                pg.mixer.music.play(-1)
-
-                mixerOn[4][0] = False
-        if mixerOn[5][0]:
-            if not mixerOn[3]:
-                if not trigger[0][1] and not trigger[1][1] and not trigger[2][1]:
-                    if mixerOn[5][1]: trigger[0][0] = True
-                    if mixerOn[5][2]: trigger[1][0] = True
-                    if mixerOn[5][3]: trigger[2][0] = True
-                    mixerOn[5][0] = False
-
-    if play_area:
-        'in out'
-        if intro >= 0:
-            if intro >= 1:
-                sala, offsets, size, tiles_breakable, background, tiles_draw, tiles_base = changeRoom(map_at, level)
-                moveLight = 1
-
-                if intro >= 4:
-                    background.image.fill(BLACK)
-                    tiles_draw.image.fill(WHITE2)
-                    tiles_draw.image.blit(tiles_base.image, (0, 0))
-                    tiles_draw.image.set_colorkey(WHITE2)
-
-                    if intro == 4: corak = Corak()
-                    corak.get_at("S")
-                    corak.checkMap()
-                    if map_at[0] >= 4:
-                        intro = 1
-
-                elif intro == 1:
-                    background.image.fill(CUSTOM2)
-                    tiles_draw.image.fill(CUSTOM)
-                    tiles_draw.image.blit(tiles_base.image, (0, 0))
-                    tiles_draw.image.set_colorkey(CUSTOM)
-
-                    corak = Corak()
-                    map_at = hall([0, 0, "get_pos_strt"], level)
-                    corak.get_at("S")
-                    corak.checkMap()
-                    intro = -1
-
-                elif intro == 2:
-                    background.image.fill(CUSTOM3)
-                    tiles_draw.image.fill(CUSTOM)
-                    tiles_draw.image.blit(tiles_base.image, (0, 0))
-                    tiles_draw.image.set_colorkey(CUSTOM)
-                    corak.get_at(temp4)
-                elif intro == 3:
-                    corak.get_at("0")
-
-                # scale
-                corak.modLight[1] = (size * int(upscale * 2.5)) * corak.modLight[0]
-                corak.sprite.image = pg.transform.scale(corak.sprite.image, (size, size))
-                pointerLight.image = pg.transform.scale(playerLight.image, (corak.modLight[1], corak.modLight[1]))
-                playerLight.image = pg.transform.scale(playerLight.image, (corak.modLight[1], corak.modLight[1]))
-
-                if "mod-" in level[map_at[1]][map_at[0]]:
-
-                    background.image.fill(CUSTOM2)
-                    tiles_draw.image.fill(CRED)
-                    tiles_draw.image.blit(tiles_base.image, (0, 0))
-                    tiles_draw.image.set_colorkey(CRED)
-
-                print(corak.at, map_at, level[map_at[1]][map_at[0]])
-
-                intro = 0
-                corak.Do = [0, 0, "Z"]
-            fade_count -= 1
-            if fade_count <= 0: intro = -1
-            fader.image.set_alpha(fade_count)
-        if out >= 0:
-
-            fade_count += 7
-            if fade_count >= 250:
-                if out == 1: intro = 1
-                if out == 2: intro = 2
-                if out == 3: intro = 3
-                if out == 4: intro = 4
-
-                if out == 5: intro = 5
-                out = -1
-            fader.image.set_alpha(fade_count)
-
-        if pause_area:
-            menuCount = 0
-            if clickset == 1: clickset = 0
-
-            screen.image.blit(tempscreen.image, (0, 0))
-            'input'
-            for button in menu[0]:
-                screen.image.blit(button.image, button.rect)
-                if button.rect.collidepoint(pointer.rect.center):
-                    button.setFrame([0, 1])
-                    if click:
-                        if not menuTrigger[1][0]:
-                            menuTrigger[1][0] = True
-                            menuTrigger[1][1] = True
-                        fade = True
-                        temp3 = False
-                        button.setFrame([0, 2])
-                    if clickset == 1:
-                        clickset = 2
-                        if "start" in button.type:
-                            if not menuTrigger[2][0]:
-                                menuTrigger[2][0] = True
-                                menuTrigger[2][1] = True
-                            intro = 3
-                            out = 3
-                        if "options" in button.type:
-                            menuTrigger[1][0] = False
-                            trigger[2] = True
-                            pointer.setFrame([0, pointer.frame[1] + 1])
-                        if "exit" in button.type:
-                            out = 0
-                            temp2 = True
-                    if not menuTrigger[0][0]:
-                        menuTrigger[0][0] = True
-                        menuTrigger[0][1] = True
-
-                    menuCount += 1
-
-                else:
-                    button.setFrame([0, 0])
-
-            if menuCount == 0:
-                menuTrigger[0][0], menuTrigger[2][0] = False, False
-
-            screen.image.blit(pointer.image, pointer.rect.center)
-        else:
-            if clickset:
-                tiles_draw.image.fill(GRAY)
-                tiles_draw.image.blit(tiles_base.image, (0, 0))
-                tiles_draw.image.set_colorkey(GRAY)
-            if click: background.image.fill((20, 10, 10))
-
-            if keypress:
-                corak.update(corak.Do)
-                map_at, out, temp4 = CheckLevel(map_at)
-
-            corak.posoffset()
-            'frame'
-            # air
-            if corak.air:
-                frame += 1
-                if frame > 1: frame = 0
-                corak.sprite.setFrame([2, frame])
-            # grab
-            if corak.grab:
-                frame += 1
-                if frame > 1: frame = 0
-                corak.sprite.setFrame([1, frame])
-            # jump
-            if "U" in corak.Do[2]:
-                frame += 1
-                if frame > 3: frame = 0
-                corak.sprite.setFrame([3, frame])
-            # ground
-            elif not corak.air:
-                frame = 1
-                corak.sprite.setFrame([0, frame])
-            # focus
-            if corak.focus:
-                frame = 0
-                corak.sprite.setFrame([4, frame])
-            # dash
-            if not corak.at[0] * size - 0.01 < corak.pos_offsetX < corak.at[0] * size + 0.01:
-                frame = 1
-                corak.sprite.setFrame([4, frame])
-            # air
-            if not corak.at[1] * size - 0.02 < corak.pos_offsetY:
-                frame = +1
-                if frame > 1: frame = 0
-                corak.sprite.setFrame([2, frame])
-            if corak.left or corak.Do[0] == -1: corak.sprite.image = pg.transform.flip(corak.sprite.image, True, False)
-
-            'draw'
-            screen.image.fill(BLACK)
-            screen.image.blit(background.image, background.rect)
-            # tiles.draw(screen.image)
-            screen.image.blit(tiles_draw.image, tiles_draw.rect)
-
-            screen.image.blit(corak.sprite.image, corak.sprite.rect)
-            # screen.image.blit(tiles_deco.image, tiles_deco.rect)
-
-            tiles_breakable.draw(screen.image)
-            if temp2:
-                fader2.image.set_alpha(fade_count)
-                counterlight.image.fill(BLACK)
-
-                pointerLight.update((mx, my))
-                counterlight.image.blit(pointerLight.image, pointerLight.rect)
-
-                playerLight.update(corak.sprite.rect.center)
-                counterlight.image.blit(playerLight.image, playerLight.rect)
-
-                counterlight.image.set_alpha(moveLight)
-
-                fader2.image.fill(BLACK)
-                fader2.image.set_alpha(moveLight)
-
-                screen.image.blit(counterlight.image, (0, 0), special_flags=pg.BLEND_MULT)
-                screen.image.blit(fader2.image, (0, 0))
-            if temp2: screen.image.blit(pointer.image, pointer.rect.center)
-
-            if moveLight < 150:
-                moveLight += 1.5
-
-        screeneffects.draw(screen.image)
-
-    tst = pg.transform.scale(screen.image, (FScreenX, FScreenY))
-    toBlit.blit(tst, (0, 0))
-    pg.display.update()
+    t+=1
+    if t>15: t=0
 
 pg.quit()
 
